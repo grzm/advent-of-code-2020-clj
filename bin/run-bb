@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -eu
+
+day="${1}"
+part="${2}"
+
+bb --classpath "$(clojure -Spath)" --main "com.grzm.advent-of-code.advent-2020.${day}" -- "${part}"

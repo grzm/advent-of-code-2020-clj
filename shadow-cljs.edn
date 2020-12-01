@@ -1,0 +1,9 @@
+{:source-paths ["src" "test"]
+ :dependencies []
+ :builds {:day-00 {:target :node-script
+                   :output-to "target/day-00.js"
+                   :main com.grzm.advent-of-code.advent-2020.day-00/-main}
+          :test {:target :node-test
+                 :output-to "target/test.js"
+                 :autorun true}}
+ :devtools {:enabled false}}

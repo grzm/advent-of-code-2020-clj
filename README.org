@@ -1,0 +1,56 @@
+* Advent of Code (2020)
+
+Advent of Code in Clojur(Script) and Babashka.
+
+** 2020 Goals
+ * Write Clojure(Script) code that also works with Babashka
+ * Use transducers where appropriate
+
+   These are the same goals I had in 2017. I don't have much call to
+   use CLJS in my daily work, and I haven't been using transducers
+   much, so it's reasonable to set the same goals.
+
+   Well, we do have Babashka now, too! 😍
+
+** Usage
+
+*** Clojure
+#+begin_src shell
+clojure -X com.grzm.advent-of-code.advent-2020.day-00/part-1
+# => part-1
+#+end_src
+
+**** Clojure Tests
+#+begin_src
+clojure -M:test
+make test
+clojure -M:test --watch
+make test-watch
+#+end_src
+
+*** ClojureScript
+#+begin_src shell
+shadow-cljs compile day-00-part-1
+node target/day-00-part-1
+# => part-1
+#+end_src
+
+The default ~make~ target will build all non-test shadow-cljs builds
+#+begin_src shell
+make
+#+end_src
+
+*** Babashka
+#+begin_src shell
+bb --classpath "$(clojure -Spath)" --main com.grzm.advent-of-code.advent-2020.day-00 -- part-1
+# => part-1
+# wrapper script
+bin/run-bb day-00 part-1
+# => part-1
+#+end_src
+
+** License
+
+Copyright © 2020 Michael Glaesemann
+
+Distributed under the MIT License.
