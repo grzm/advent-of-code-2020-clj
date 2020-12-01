@@ -77,12 +77,13 @@
        tails
        (mapcat pairs)
        (some (fn [[x y :as pair]] (when (= (+ x y) 2020)
-                                    pair)))))
+                                    pair)))
+       (apply *)))
 
 (def input (util/slurp-resource "data/day-01"))
 
 (comment
-  
+
   (part-1 sample-input) ;; => [299 1721]
 
   input
@@ -96,7 +97,7 @@
                    (when (= 2020 (apply + combo))
                      combo)))
            (apply *))) ;; 32858450
-  
+
   ;;   --- Part Two ---
 
   ;; The Elves in accounting are thankful for your help; one of them
@@ -110,5 +111,18 @@
 
   ;; In your expense report, what is the product of the three entries
   ;; that sum to 2020?
-  
+
   :end)
+
+(defn part-2 [input]
+  (-> (parse-input input)
+      (combinatorics/combinations 3)
+      (->> (some (fn [combo]
+                   (when (= 2020 (apply + combo))
+                     combo)))
+           (apply *))))
+
+(defn -main [& args]
+  (case (first args)
+    "part-1" (println (part-1 input))
+    "part-2" (println (part-2 input))))
