@@ -18,12 +18,12 @@
 (defn part-2 [_]
   "part-2")
 
-(defn run-part-fn [part-label]
-  (let [part-label (or part-label "part-1")]
-    (case part-label
-      "part-1" (println (part-1 {}))
-      "part-2" (println (part-2 {})))))
+(defn run [{:keys [part]}]
+  (case part
+    :part-1 (println (part-1 input))
+    :part-2 (println (part-2 input))))
 
 ;; cljs and bb
 (defn -main [& args]
-  (run-part-fn (first args)))
+  (when-let [part (first args)]
+    (run {:part (keyword part)})))

@@ -122,7 +122,11 @@
                      combo)))
            (apply *))))
 
+(defn run [{:keys [part]}]
+  (case part
+    :part-1 (println (part-1 input))
+    :part-2 (println (part-2 input))))
+
 (defn -main [& args]
-  (case (first args)
-    "part-1" (println (part-1 input))
-    "part-2" (println (part-2 input))))
+  (when-let [part (first args)]
+    (run {:part (keyword part)})))

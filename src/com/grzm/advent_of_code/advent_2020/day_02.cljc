@@ -75,8 +75,10 @@
   
   :end)
 
-(defn part-1 [{}]
-  (->> (util/slurp-resource "data/day-02")
+(def input (util/slurp-resource "data/day-02"))
+
+(defn part-1 [input]
+  (->> input
        parse-input
        (filter valid?)
        count))
@@ -132,7 +134,7 @@
 
   :end)
 
-(defn part-2* [input]
+(defn part-2 [input]
     (->> input
        str/split-lines
        (map part-2-parse-line)
@@ -140,17 +142,14 @@
        (filter identity)
        count))
 
-(defn part-2 [_]
-  (part-2* (util/slurp-resource "data/day-02")))
-
 (comment
   (part-2 nil) ;; 321
   :end)
 
 (defn run [{:keys [part]}]
   (case part
-    :part-1 (println (part-1 {}))
-    :part-2 (println (part-2 {}))))
+    :part-1 (println (part-1 input))
+    :part-2 (println (part-2 input))))
 
 (defn -main [& args]
   (when-let [part (first args)]

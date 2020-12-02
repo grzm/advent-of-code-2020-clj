@@ -12,12 +12,28 @@ Advent of Code in Clojur(Script) and Babashka.
 
    Well, we do have Babashka now, too! 😍
 
+
+ 
+** Setup
+
+#+begin_src shell
+cp session.netscape.dist session.netscape
+#+end_src
+
+Update ~session.netscape~ to reflect the session id available in your browser.
+
 ** Usage
+
+Fetching input
+
+#+begin_src shell
+curl -b session.netscape https://adventofcode.com/2020/day/2/input > resources/data/day-02
+#+end_src
 
 *** Clojure
 #+begin_src shell
-clojure -X com.grzm.advent-of-code.advent-2020.day-00/part-1
-# => part-1
+clojure -X com.grzm.advent-of-code.advent-2020.day-00/run :part :part-1
+# => [[0 3] [1 2] [2 5]]
 #+end_src
 
 **** Clojure Tests
@@ -32,7 +48,7 @@ make test-watch
 #+begin_src shell
 shadow-cljs compile day-00-part-1
 node target/day-00-part-1
-# => part-1
+# => [[0 3] [1 2] [2 5]]
 #+end_src
 
 The default ~make~ target will build all non-test shadow-cljs builds
@@ -43,10 +59,10 @@ make
 *** Babashka
 #+begin_src shell
 bb --classpath "$(clojure -Spath)" --main com.grzm.advent-of-code.advent-2020.day-00 -- part-1
-# => part-1
+# => [[0 3] [1 2] [2 5]]
 # wrapper script
 bin/run-bb day-00 part-1
-# => part-1
+# => [[0 3] [1 2] [2 5]]
 #+end_src
 
 ** License
