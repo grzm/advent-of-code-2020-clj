@@ -1,5 +1,4 @@
-{:source-paths ["src" "test"]
- :dependencies [[org.clojure/math.combinatorics "0.1.6"]]
+{:deps {:aliases [:cljs]}
  :builds {:day-00 {:target :node-script
                    :output-to "target/day-00.js"
                    :main com.grzm.advent-of-code.advent-2020.day-00/-main}

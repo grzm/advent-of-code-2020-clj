@@ -3,7 +3,7 @@
 CLJS_BUILDS := $(shell bin/list-cljs-builds)
 
 cljs :
-	shadow-cljs compile $(CLJS_BUILDS)
+	clojure -M:shadow-cljs compile $(CLJS_BUILDS)
 
 test :
 	clojure -M:test
@@ -12,8 +12,8 @@ test-watch :
 	clojure -M:test --watch
 
 test-cljs :
-	shadow-cljs compile test
+	clojure -M:shadow-cljs compile test
 
 test-cljs-watch :
-	shadow-cljs watch test 
+	clojure -M:shadow-cljs watch test
 
