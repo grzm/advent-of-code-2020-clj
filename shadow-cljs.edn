@@ -5,6 +5,9 @@
           :day-01 {:target :node-script
                    :output-to "target/day-01.js"
                    :main com.grzm.advent-of-code.advent-2020.day-01/-main}
+          :day-02 {:target :node-script
+                   :output-to "target/day-02.js"
+                   :main com.grzm.advent-of-code.advent-2020.day-02/-main}
           :test {:target :node-test
                  :output-to "target/test.js"
                  :autorun true}}
