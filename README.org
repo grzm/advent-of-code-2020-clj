@@ -6,13 +6,14 @@ Advent of Code in Clojur(Script) and Babashka.
  * Write Clojure(Script) code that also works with Babashka
  * Use transducers where appropriate
 
-   These are the same goals I had in 2017. I don't have much call to
-   use CLJS in my daily work, and I haven't been using transducers
-   much, so it's reasonable to set the same goals.
+Update: as for the second goal, looks like I'm satisfied to just write
+a hacky version that works, for now.
+ 
+These are the same goals I had in 2017. I don't have much call to
+use CLJS in my daily work, and I haven't been using transducers
+much, so it's reasonable to set the same goals.
 
-   Well, we do have Babashka now, too! 😍
-
-
+Well, we do have Babashka now, too! 😍
  
 ** Setup
 
@@ -28,6 +29,20 @@ Fetching input
 
 #+begin_src shell
 curl -b session.netscape https://adventofcode.com/2020/day/2/input > resources/data/day-02
+#+end_src
+
+*** Run all at once
+
+#+begin_src
+% bin/run-day day-00
+day-00 part-1
+clj  [[0 3] [1 2] [2 5]]
+cljs [[0 3] [1 2] [2 5]]
+bb   [[0 3] [1 2] [2 5]]
+day-00 part-2
+clj  part-2
+cljs part-2
+bb   part-2
 #+end_src
 
 *** Clojure

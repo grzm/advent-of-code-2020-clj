@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -eu
+
+day="${1}"
+
+run_clj () {
+    local day=${1}
+    local part=${1}
+}
+
+for part in "part-1" "part-2" ; do
+    echo ${day} ${part}
+
+    echo "clj  $(clojure -X "com.grzm.advent-of-code.advent-2020.${day}/run" :part ":${part}")"
+
+    echo "cljs $(node target/${day}.js "${part}")"
+
+    echo "bb   $(bb --classpath "$(clojure -Spath)" \
+                   --main "com.grzm.advent-of-code.advent-2020.${day}" \
+                   -- "${part}")"
+done
