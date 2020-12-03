@@ -1,7 +1,6 @@
 (ns com.grzm.advent-of-code.advent-2020.day-02
   (:require
    [clojure.string :as str]
-   [clojure.math.combinatorics :as combinatorics]
    [com.grzm.advent-of-code.advent-2020.util :as util]))
 
 ;; --- Day 2: Password Philosophy ---
